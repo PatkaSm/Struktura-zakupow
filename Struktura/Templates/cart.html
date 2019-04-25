@@ -1,0 +1,81 @@
+{% extends "index.html" %}
+{% block content %}
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="cartForm">
+					<p> Wybierz z listy rodzaj produktu, który chcesz umieścić w koszyku oraz wpisz jego cenę. </p>
+					<div class="form">
+						<label for="product">Wybierz produkt:</label>
+						<select id="product">
+						    <option>{{ product.name }}</option>
+							<option>Warzywa</option>
+							<option>Napoje</option>
+							<option>Akohol</option>
+							<option>Mięso</option>
+							<option>Nabiał</option>
+							<option>Słodycze</option>
+							<option>Przekąski słone</option>
+						</select>
+						<label for="price" >Cena:</label>
+						<input type="text" id="price" name="price"></br></br>
+					</div>
+
+					<div class="niewiem2">
+						<button type="button" class="addItemToCartt"> Dodaj do koszyka </button> </br>
+					</div>
+				</div>
+				<div class="productTable">
+					<table id="table">
+						<tr>
+							<td>Rodzaj produktu</td>
+							<td>Wartość [zł] </td>
+							<td>Częstotliwość kupowania </td>
+						</tr>
+						<tr>
+							<td>Warzywa</td>
+							<td>--</td>
+							<td> -- </td>
+						</tr>
+						<tr>
+							<td>Owoce</td>
+							<td>--</td>
+							<td> -- </td>
+						</tr>
+						<tr>
+							<td>Napoje</td>
+							<td>--</td>
+							<td> -- </td>
+						</tr>
+						<tr>
+							<td>Alkohol</td>
+							<td>--</td>
+							<td> -- </td>
+						</tr>
+						<tr>
+							<td>Mięso</td>
+							<td>--</td>
+							<td> -- </td>
+						</tr>
+						<tr>
+							<td>Nabiał</td>
+							<td>--</td>
+							<td> -- </td>
+						</tr>
+						<tr>
+							<td>Słodycze</td>
+							<td>--</td>
+							<td> -- </td>
+						</tr>
+						<tr>
+							<td>Słone przekąski</td>
+							<td>--</td>
+							<td> -- </td>
+						</tr>
+
+					</table>
+				</div>
+
+			</div>
+		</div>
+	</div>
+{% endblock content %}

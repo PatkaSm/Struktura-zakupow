@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pl">
+<head>
+	 <title>Struktura zakupów</title>
+	 <meta charset="utf-8">
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	 <link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	 <link rel="stylesheet" href="{% static 'css/style.css' %}">
+	 <link href="https://fonts.googleapis.com/css?family=Lato|Permanent+Marker" rel="stylesheet">
+	 <link href="/static/fontello/css/fontello.css" rel="stylesheet" type="text/css" />
+	 <script>
+		function switchInfo()
+		{
+		   var info = document.getElementById('info')
+		   info.style.display=(info.style.display=='none')?'':'none'
+		}
+	</script>
+
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+					<div class="slogan">
+						<div class="zalogowanyJako">
+						Zalogowany jako: {{user.username}}
+						<button> <a href="{% url 'user_logout' %}">Wyloguj</a></button> </br>
+						</div>
+						<nav>
+							<ul class="menu">
+								<li><a href="{% url 'newcart' %}">Utwórz nowy koszyk </br><i class="demo-icon icon-plus" ></i></a></li>
+								<li><a href="{% url 'cart' %}">Aktualny koszyk </br><i class="demo-icon icon-basket-1" ></i></a></li>
+								<li><a href="{%url 'structure'%}">Struktura zakupów</br><i class="demo-icon icon-chart-bar"></i></a></li>
+								<li><a href="{%url 'addItem'%}">Jak oszczędzać?</br><i class="demo-icon icon-money"></i></a></li>
+							</ul>
+						</nav>
+
+					</div>
+			</div>
+		</div>
+			{% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+          {% block content %}{% endblock %}
+	</div>
+	<footer>
+	<p id="trescStopki"> Copyright © 2019  Patrycja Smolak patrycja.s449@gmail.com </p>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	 <title>Struktura zakupów</title>
+	 <meta charset="utf-8">
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	 <link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	 <link href="https://fonts.googleapis.com/css?family=Lato|Permanent+Marker" rel="stylesheet">
+	 <script>
+		function switchInfo()
+		{
+		   var info = document.getElementById('info')
+		   info.style.display=(info.style.display=='none')?'':'none'
+		}
+	</script>
+</head>
+<body>
+	<div class="container" >
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="slogan" >
+					<h1>Sprawdź i zaplanuj strukturę swoich zakupów.</h1>
+					<h2>Aplikacja pomagająca w zarządzaniu budżetem.</h2> </br>
+					<button class="buttonLogo" type="button" onclick="switchInfo()">Więcej o aplikacji</button> </br>
+					<div id="info" style="display:none">
+						Proste i funkcjonalne narzędzie do kontrolowania wydatków </br>
+						Wpisujemy kwotę, zaznaczamy na co zostały przeznaczone pieniądze a aplikacja pokazuje nam miesięczne zestawienie wydatków.</br>
+						Można przedstawić statystyki w postaci wykresów, zaplanować wydatki i porównać je z dokonanymi.
+					</div>
+				</div>
+			</div>
+		</div>
+
+		{% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+          {% block content %}{% endblock %}
+
+	</div>
+	<footer>
+	<p id="trescStopki"> Copyright © 2019  Patrycja Smolak patrycja.s449@gmail.com </p>
+	</footer>
+</body>
+</html>

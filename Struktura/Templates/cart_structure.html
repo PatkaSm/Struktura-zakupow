@@ -1,0 +1,7 @@
+{% extends "index.html" %}
+{% block content %}
+<p>Koszyki: </p>
+{% for cart in data %}
+<p>  {{cart.cart_name}} </p>
+{% endfor %}
+{% endblock content %}
