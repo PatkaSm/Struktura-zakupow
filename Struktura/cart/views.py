@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.utils import timezone
 
@@ -20,8 +21,8 @@ def new_cart_view(request):
             cart.user = request.user
             cart.date_added = timezone.now()
             cart.save()
-            cartt_name = form.cleaned_data.get('cart_name')
-            # messages.success(request, f'{cart_name} został utworzony! Dodaj do niego produkty.')  nie dziala w pythonie 3.5
+            cart_name = form.cleaned_data.get('cart_name')
+            messages.success(request, 'Koszyk {cart_name} został utworzony! Dodaj do niego produkty.'.format(cart_name=cart_name))
             return redirect('cart')
     else:
         form = NewCartForm()

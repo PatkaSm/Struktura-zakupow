@@ -57,7 +57,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/home/patrycja/Desktop/WebApp/plikacjeDjango/Struktura/Templates/'],
+        'DIRS': ['/home/patrycja/Desktop/AplikacjeDjango/Struktura/Templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -5,8 +5,8 @@ from django.contrib.auth.models import User
 
 
 class UserLoginForm(forms.Form):
-    username = forms.CharField()
-    password = forms.CharField(widget=forms.PasswordInput)
+    username = forms.CharField(label="Nazwa użytkownika")
+    password = forms.CharField(label="Hasło", widget=forms.PasswordInput,)
 
     def clean(self, *args, **kwargs):
         username = self.cleaned_data.get('username')

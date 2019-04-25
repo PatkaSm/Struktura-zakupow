@@ -32,7 +32,7 @@ def register_view(request):
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
-            # messages.success(request, f'{username} Twoje konto zostało założone, możesz się zalogować!') nie działa w pythonie 3.5
+            messages.success(request, '{username} Twoje konto zostało założone, możesz się zalogować!'.format(username=username))
             return redirect('user_login')
     else:
         form = UserRegisterForm()

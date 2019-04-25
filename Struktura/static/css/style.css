@@ -55,7 +55,7 @@ p{
 
 
 #logowanie{
-	width: 400px;
+	width: 500px;
 	margin: 0 auto;
 	background: #EEEEEE;
 	border: 1px solid silver;
@@ -90,15 +90,6 @@ label {
 	text-shadow: 0 0 1px silver;
 }
 
-#username, #password, #password2, #lastName, #email {
-	display: block;
-	width: 360px;
-	margin: 0 auto;
-	padding: 10px 5px;
-	border: 1px solid #FF4500;
-	outline: 5px solid #ebebeb;
-	font-size: 22px;
-}
 
 #lower{
 	width: 360px;
