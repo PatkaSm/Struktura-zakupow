@@ -9,9 +9,6 @@ from cart.models import Cart
 def index(request):
     return render(request, "newCart.html")
 
-def cart(request):
-    return render(request, "cart.html")
-
 
 def new_cart_view(request):
     if request.method == 'POST':
@@ -30,12 +27,13 @@ def new_cart_view(request):
 
 
 def show_cart(request):
-    data = Cart.objects.filter(user = request.user)
+    data = Cart.objects.filter()
     return render(request, "cart_structure.html", {'data' : data})
 
-def show_cart2(request):
-    data = Cart.objects.product.filter(user = request.user)
+
+def show_products(request):
+    data = Cart.objects.filter()
     print(data)
-    return render(request, "nowy.html", {'data' : data})
+    return render(request, "index.html", {'data' : data})
 
 

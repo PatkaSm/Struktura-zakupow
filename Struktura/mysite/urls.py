@@ -17,6 +17,8 @@ from django.conf.urls import url
 from django.contrib import admin
 from cart import views as cart_vievs
 from user import views as user_vievs
+from product import views as product_views
+
 
 urlpatterns = [
     url('admin/', admin.site.urls),
@@ -25,8 +27,9 @@ urlpatterns = [
     url(r'^index/', cart_vievs.index, name='index'),
     url(r'^logout/', user_vievs.logout_view, name='user_logout'),
     url(r'^newcart/', cart_vievs.new_cart_view, name='newcart'),
-    url(r'^cart/<int:pk>/', cart_vievs.cart, name='cart'),
     url(r'^structure/', cart_vievs.show_cart, name='structure'),
-    url(r'^addItem/', cart_vievs.show_cart2, name='addItem'),
+    url(r'^cart/', product_views.new_product_view, name='cart'),
+    url(r'^showitems/', cart_vievs.show_products, name='showitems'),
+
 
 ]

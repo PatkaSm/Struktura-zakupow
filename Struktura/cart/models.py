@@ -10,8 +10,6 @@ class Cart(models.Model):
     date_added = models.DateTimeField(auto_now=True)
 
 
-
-
-
-
+    def __str__(self):
+        return self.cart_name
 

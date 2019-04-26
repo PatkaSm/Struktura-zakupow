@@ -34,7 +34,7 @@
 								<li><a href="{% url 'newcart' %}">Utwórz nowy koszyk </br><i class="demo-icon icon-plus" ></i></a></li>
 								<li><a href="{% url 'cart' %}">Aktualny koszyk </br><i class="demo-icon icon-basket-1" ></i></a></li>
 								<li><a href="{%url 'structure'%}">Struktura zakupów</br><i class="demo-icon icon-chart-bar"></i></a></li>
-								<li><a href="{%url 'addItem'%}">Jak oszczędzać?</br><i class="demo-icon icon-money"></i></a></li>
+								<li><a href="{%url 'showitems'%}">Jak oszczędzać?</br><i class="demo-icon icon-money"></i></a></li>
 							</ul>
 						</nav>
 
@@ -48,6 +48,7 @@
               </div>
             {% endfor %}
           {% endif %}
+
           {% block content %}{% endblock %}
 	</div>
 	<footer>
