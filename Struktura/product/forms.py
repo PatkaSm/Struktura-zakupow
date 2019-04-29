@@ -1,5 +1,5 @@
 from django import forms
-
+from django.contrib.auth.models import User
 from cart.models import Cart
 from product.models import Product
 
@@ -12,6 +12,7 @@ class NewProductForm(forms.ModelForm):
     price = forms.DecimalField(label=('Cena'))
     category = forms.ChoiceField(widget=forms.Select(), choices=Category, label='Kategoria')
     cart = forms.ModelChoiceField(required=True, queryset=Cart.objects.filter()) # dodać request.user
+
 
     class Meta:
         model = Product

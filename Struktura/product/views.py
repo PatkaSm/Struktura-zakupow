@@ -2,6 +2,7 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 
 # Create your views here.
+from cart.models import Cart
 from product.forms import NewProductForm
 
 
@@ -16,8 +17,11 @@ def new_product_view(request):
             cart.product.add(product)
             cart.save()
             name = form.cleaned_data.get('name')
-            messages.success(request, 'Produkt  {name} został utworzony i dodany do koszyka!'.format(name=name))
+            messages.success(request, 'Produkt  {name} został utworzony i dodany do koszyka  {cart}!'.format(name=name, cart = cart))
             return redirect('cart')
     else:
         form = NewProductForm()
-    return render(request, "cart.html", {'form': form})
+    data = Cart.objects.filter(user = request.user)
+    return render(request, "cart.html", {'form': form,'data': data})
+
+

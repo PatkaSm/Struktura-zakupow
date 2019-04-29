@@ -27,13 +27,10 @@ def new_cart_view(request):
 
 
 def show_cart(request):
-    data = Cart.objects.filter()
+    data = Cart.objects.filter(user = request.user)
     return render(request, "cart_structure.html", {'data' : data})
 
 
-def show_products(request):
-    data = Cart.objects.filter()
-    print(data)
-    return render(request, "index.html", {'data' : data})
+
 
 

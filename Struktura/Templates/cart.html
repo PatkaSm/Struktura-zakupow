@@ -16,25 +16,23 @@
 				</div>
 				<div class="productTable">
 					<table id="table">
-
-						<tr>
-							<td>Rodzaj produktu</td>
+						<tr >
+							<td style="color: white">Rodzaj produktu</td>
 							<td>Wartość [zł] </td>
-							<td>Częstotliwość kupowania </td>
+							<td>Usuń produkt z koszyka </td>
 						</tr>
 
+						{%  for cart in data %}
+    						{% for product in cart.product.all %}
 						<tr>
-							{% for cart in data %}
-							<td>{{cart.cart_name}}</td>
-							{% endfor %}
-							<td>--</td>
-							<td> -- </td>
+							<td><p> {{ product }} </p></td>
+							<td>{{product.price}}</td>
+							<td> <button type="button" class="btn btn-danger">Usuń</button> </td>
 						</tr>
-
+							{% endfor %}
+						{% endfor %}
 					</table>
-				</div>
-
 			</div>
 		</div>
-	</div>
+		</div>
 {% endblock content %}
