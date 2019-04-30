@@ -25,7 +25,7 @@
 						{%  for cart in data %}
     						{% for product in cart.product.all %}
 						<tr>
-							<td><p> {{ product }} </p></td>
+							<td><p> {{ product }} ({{cart}}) </p></td>
 							<td>{{product.price}}</td>
 							<td> <button type="button" class="btn btn-danger">Usuń</button> </td>
 						</tr>
