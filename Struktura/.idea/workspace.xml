@@ -3,14 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="349d3a07-6d4a-4b90-95e3-af4a0d1a4948" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Templates/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Templates/cart_structure.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/cart_structure.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cart/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,8 +41,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cart/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="34" column="30" lean-forward="true" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+            <state relative-caret-position="397">
+              <caret line="38" column="64" selection-start-line="38" selection-start-column="64" selection-end-line="38" selection-end-column="64" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -96,11 +90,11 @@
         <option value="$PROJECT_DIR$/static/css/style.css" />
         <option value="$PROJECT_DIR$/product/forms.py" />
         <option value="$PROJECT_DIR$/Templates/cart_structure.html" />
-        <option value="$PROJECT_DIR$/cart/views.py" />
         <option value="$PROJECT_DIR$/Templates/index.html" />
         <option value="$PROJECT_DIR$/mysite/urls.py" />
         <option value="$PROJECT_DIR$/product/views.py" />
         <option value="$PROJECT_DIR$/Templates/cart.html" />
+        <option value="$PROJECT_DIR$/cart/views.py" />
       </list>
     </option>
   </component>
@@ -122,43 +116,6 @@
             <path>
               <item name="Struktura" type="b2602c69:ProjectViewProjectNode" />
               <item name="Struktura" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Struktura" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Struktura" type="462c0819:PsiDirectoryNode" />
-              <item name="cart" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Struktura" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Struktura" type="462c0819:PsiDirectoryNode" />
-              <item name="mysite" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Struktura" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Struktura" type="462c0819:PsiDirectoryNode" />
-              <item name="product" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Struktura" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Struktura" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Struktura" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Struktura" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Struktura" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Struktura" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Struktura" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Struktura" type="462c0819:PsiDirectoryNode" />
-              <item name="Templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -201,7 +158,7 @@
       <workItem from="1556287323717" duration="14681000" />
       <workItem from="1556547370646" duration="11204000" />
       <workItem from="1556616365334" duration="11352000" />
-      <workItem from="1556736490700" duration="4066000" />
+      <workItem from="1556736490700" duration="5480000" />
     </task>
     <task id="LOCAL-00001" summary="+ migracje">
       <created>1556197521764</created>
@@ -245,15 +202,21 @@
       <option name="project" value="LOCAL" />
       <updated>1556642933857</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="choicefield cart">
+      <created>1556741296474</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1556741296474</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51114000" />
+    <option name="totallyTimeSpent" value="52528000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="25" width="1922" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2614728" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -313,7 +276,8 @@
     <MESSAGE value="user,cart,product" />
     <MESSAGE value=".." />
     <MESSAGE value="widac tylko koszyki zalogowanego usera" />
-    <option name="LAST_COMMIT_MESSAGE" value="widac tylko koszyki zalogowanego usera" />
+    <MESSAGE value="choicefield cart" />
+    <option name="LAST_COMMIT_MESSAGE" value="choicefield cart" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/requirements.txt">
@@ -476,8 +440,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cart/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="34" column="30" lean-forward="true" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+        <state relative-caret-position="397">
+          <caret line="38" column="64" selection-start-line="38" selection-start-column="64" selection-end-line="38" selection-end-column="64" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>

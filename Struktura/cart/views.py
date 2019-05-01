@@ -36,8 +36,7 @@ def show_cart(request):
             return render(request, "cart_structure.html", {'form':form2, 'data' : data})
     else:
         form2 = selectCart(user=request.user)
-        data = Cart.objects.filter(user = request.user)
-    return render(request, "cart_structure.html", {'form':form2, 'data' : data})
+    return render(request, "cart_structure.html", {'form':form2})
 
 
 
