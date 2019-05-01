@@ -22,6 +22,7 @@ class NewProductForm(forms.ModelForm):
 
 
 class selectCart(forms.Form):
+
     def __init__(self, *args, user, **kwargs):
         super(selectCart, self).__init__(*args, **kwargs)
         self.fields['cart'] = forms.ModelChoiceField(queryset=Cart.objects.filter(user=user))

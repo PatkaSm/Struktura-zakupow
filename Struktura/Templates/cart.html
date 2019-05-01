@@ -5,7 +5,7 @@
 				<div class="cartForm">
 					<p> Stwórz produkt, który chcesz umieścić w koszyku, wpisz jego cenę oraz wybierz kategorię do której należy. </p>
 					<div id="addProduct">
-							<form method="POST" >
+							<form id = 'product_form' method="POST" >
 									{% csrf_token %}
 									{{ form.as_p }}
 								<div class="form-group">
@@ -15,6 +15,15 @@
 					</div>
 				</div>
 				<div class="productTable">
+
+                            <form id = "show_product_form" method="POST" >
+									{% csrf_token %}
+									{{ form2.as_p }}
+							<div class="form-group">
+									<button class="btn btn-outline-info" type="submit">wybierz koszyk</button>
+								</div>
+							</form>
+
 					<table id="table">
 						<tr >
 							<td style="color: white">Rodzaj produktu</td>

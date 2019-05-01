@@ -23,14 +23,14 @@ def new_product_view(request):
     return render(request, "cart.html", {'form': form, 'data':data})
 
 
-def select_cart_view(request):
+def show_products_by_cart(request):
     if request.method == 'POST':
         form2 = selectCart(request.POST, user=request.user)
         if form2.is_valid():
-            form2.save()
             cart = form2.cleaned_data.get('cart')
-            data = Cart.objects.order_by('-date_added').filter(user=request.user, cart = cart)
-            return redirect('cart',{'data': data})
+            data = Cart.objects.order_by('-date_added').filter(user=request.user, cart_name=cart.cart_name)
+            return render(request, "cart.html", {'form':form2, 'data' : data})
     else:
-        form2 = selectCart(request.POST, user=request.user)
-    return render(request, "cart.html", {'form': form2})
+        form2 = selectCart(user=request.user)
+        data = Cart.objects.filter(user = request.user)
+    return render(request, "cart.html", {'form2':form2, 'data' : data})
