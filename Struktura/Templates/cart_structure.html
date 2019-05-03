@@ -1,18 +1,19 @@
 {% extends "index.html" %}
-{% block content %}
 
-                            <form method="POST" >
-									{% csrf_token %}
-									{{ form.as_p }}
-							<div class="form-group">
-									<button class="btn btn-outline-info" type="submit">wybierz koszyk</button>
-								</div>
-							</form>
-<p>Koszyki: </p>
-{%  for cart in data %}
+{% block content %}
+<form method="POST" >
+	{% csrf_token %}
+	{{ form.as_p }}
+	<div class="form-group">
+		<button class="btn btn-outline-info" type="submit">wybierz koszyk</button>
+	</div>
+</form>
+
+<p>Koszyki:</p>
+{% for cart in data %}
     <h1>{{cart}}</h1>
     {% for product in cart.product.all %}
-    <p>{{ product }}</p>
+		<p>{{ product }}</p>
     {% endfor %}
 {% endfor %}
 {% endblock content %}
