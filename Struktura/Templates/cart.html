@@ -11,7 +11,7 @@
 					{% csrf_token %}
 					{{ form.as_p }}
 					<div class="form-group">
-						<button class="btn btn-outline-info" type="submit">Dodaj produkt</button>
+						<button class="btn btn-outline-info" type="submit" name="dodajProdukt">Dodaj produkt</button>
 					</div>
 				</form>
 			</div>
@@ -22,7 +22,7 @@
 				{% csrf_token %}
 				{{ form2.as_p }}
 				<div class="form-group">
-					<button class="btn btn-outline-info" type="submit">wybierz koszyk</button>
+					<input type="submit" name="button_1" value="Click me">
 				</div>
 			</form>
 
