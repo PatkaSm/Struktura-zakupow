@@ -29,7 +29,7 @@ urlpatterns = [
     url(r'^newcart/', cart_vievs.new_cart_view, name='newcart'),
     url(r'^structure/', cart_vievs.show_cart, name='cart_structure'),
     url(r'^cart/', product_views.new_product_view, name='cart'),
-    url(r'^cart/', product_views.show_products_by_cart, name='cart'),
+
 
 
 

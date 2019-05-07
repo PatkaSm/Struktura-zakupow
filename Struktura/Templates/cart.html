@@ -1,47 +1,49 @@
 {% extends "index.html" %}
+
 {% block content %}
-		<div class="row">
-			<div class="col-sm-12">
-				<div class="cartForm">
-					<p> Stwórz produkt, który chcesz umieścić w koszyku, wpisz jego cenę oraz wybierz kategorię do której należy. </p>
-					<div id="addProduct">
-							<form id = 'product_form' method="POST" >
-									{% csrf_token %}
-									{{ form.as_p }}
-								<div class="form-group">
-									<button class="btn btn-outline-info" type="submit">Dodaj produkt</button>
-								</div>
-							</form>
+<div class="row">
+	<div class="col-sm-12">
+
+		<div class="cartForm">
+			<p>Stwórz produkt, który chcesz umieścić w koszyku, wpisz jego cenę oraz wybierz kategorię do której należy.</p>
+			<div id="addProduct">
+				<form id = 'product_form' method="POST">
+					{% csrf_token %}
+					{{ form.as_p }}
+					<div class="form-group">
+						<button class="btn btn-outline-info" type="submit">Dodaj produkt</button>
 					</div>
-				</div>
-				<div class="productTable">
-
-                            <form id = "show_product_form" method="POST" >
-									{% csrf_token %}
-									{{ form2.as_p }}
-							<div class="form-group">
-									<button class="btn btn-outline-info" type="submit">wybierz koszyk</button>
-								</div>
-							</form>
-
-					<table id="table">
-						<tr >
-							<td style="color: white">Rodzaj produktu</td>
-							<td>Wartość [zł] </td>
-							<td>Usuń produkt z koszyka </td>
-						</tr>
-
-						{%  for cart in data %}
-    						{% for product in cart.product.all %}
-						<tr>
-							<td><p> {{ product }} ({{cart}}) </p></td>
-							<td>{{product.price}}</td>
-							<td> <button type="button" class="btn btn-danger">Usuń</button> </td>
-						</tr>
-							{% endfor %}
-						{% endfor %}
-					</table>
+				</form>
 			</div>
 		</div>
-		</div>
+
+		<div class="productTable">
+			<form id = "show_product_form" method="POST">
+				{% csrf_token %}
+				{{ form2.as_p }}
+				<div class="form-group">
+					<button class="btn btn-outline-info" type="submit">wybierz koszyk</button>
+				</div>
+			</form>
+
+			<table id="table">
+				<tr>
+					<td style="color: white">Rodzaj produktu</td>
+					<td>Wartość [zł]</td>
+					<td>Usuń produkt z koszyka</td>
+				</tr>
+				{% for cart in data %}
+					{% for product in cart.product.all %}
+						<tr>
+							<td><p>{{ product }} </p></td>
+							<td>{{product.price}}</td>
+							<td><button type="button" class="btn btn-danger">Usuń</button></td>
+						</tr>
+					{% endfor %}
+				{% endfor %}
+			</table>
+		</div> <!-- productTable -->
+
+	</div> <!-- col-sm-12 -->
+</div> <!-- row -->
 {% endblock content %}

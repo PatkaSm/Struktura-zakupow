@@ -1,19 +1,19 @@
 {% extends "index.html" %}
 {% block content %}
-		<div class="row">
-			<div class="col-sm-12">
-				<div class="cartForm">
-					<p> Jeśli nie masz jeszcze aktualnego koszyka lub chcesz stworzyć kolejny, dodaj nowy koszyk do którego wrzucać będziesz poszczególne produkty z podziałem na rodzaj oraz cenę. </p>
-					<p>
-					<div class="form">
-						<form method="post">
-						<label ><i class="demo-icon icon-basket" ></i>Nazwa koszyka:</label>
-							{% csrf_token %}
-							{{form}}
-						<button class="btn btn-outline-info" type="submit">Stwórz koszyk</button>
-						</form>
-					</div>
-				</div>
+<div class="row">
+	<div class="col-sm-12">
+		<div class="cartForm">
+			<p> Jeśli nie masz jeszcze aktualnego koszyka lub chcesz stworzyć kolejny, dodaj nowy koszyk do którego wrzucać będziesz poszczególne produkty z podziałem na rodzaj oraz cenę. </p>
+			<p>
+			<div class="form">
+				<form method="post">
+				<label ><i class="demo-icon icon-basket" ></i>Nazwa koszyka:</label>
+					{% csrf_token %}
+					{{form}}
+				<button class="btn btn-outline-info" type="submit">Stwórz koszyk</button>
+				</form>
 			</div>
 		</div>
+	</div>
+</div>
 {% endblock content %}
