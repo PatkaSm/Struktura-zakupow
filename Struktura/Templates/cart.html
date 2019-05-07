@@ -11,7 +11,7 @@
 					{% csrf_token %}
 					{{ form.as_p }}
 					<div class="form-group">
-						<button class="btn btn-outline-info" type="submit" name="dodajProdukt">Dodaj produkt</button>
+						<button class="btn btn-outline-info" type="submit" name="addProduct">Dodaj produkt</button>
 					</div>
 				</form>
 			</div>
@@ -22,22 +22,31 @@
 				{% csrf_token %}
 				{{ form2.as_p }}
 				<div class="form-group">
-					<input type="submit" name="button_1" value="Click me">
+					<input type="submit" name="choiceCart" value="Click me">
 				</div>
 			</form>
 
 			<table id="table">
 				<tr>
 					<td style="color: white">Rodzaj produktu</td>
+					<td> Kategoria </td>
 					<td>Wartość [zł]</td>
 					<td>Usuń produkt z koszyka</td>
 				</tr>
 				{% for cart in data %}
 					{% for product in cart.product.all %}
 						<tr>
-							<td><p>{{ product }} </p></td>
+							<td>{{ product }}</td>
+							<td>{{product.get_category_display}}</td>
 							<td>{{product.price}}</td>
-							<td><button type="button" class="btn btn-danger">Usuń</button></td>
+							<td>
+								<form method='POST'>
+									{% csrf_token %}
+									<input type="hidden" name="product_id"  value="{{ product.id }}"/>
+									<input type="submit" class="btn btn-danger" value="Usuń" name="deleteButton"/>
+								</form>
+                           </td>
+
 						</tr>
 					{% endfor %}
 				{% endfor %}

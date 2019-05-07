@@ -5,6 +5,7 @@ from django.utils import timezone
 from cart.forms import NewCartForm
 from cart.models import Cart
 from product.forms import selectCart
+from product.models import Product
 
 
 def index(request):
@@ -33,7 +34,8 @@ def show_cart(request):
         if form2.is_valid():
             cart = form2.cleaned_data.get('cart')
             data = Cart.objects.order_by('-date_added').filter(user=request.user, id=cart.id)
-            return render(request, "cart_structure.html", {'form':form2, 'data' : data})
+            data2 = Product.objects.filter(user=request.user)
+            return render(request, "cart_structure.html", {'form':form2, 'data' : data, 'data2':data2})
     else:
         form2 = selectCart(user=request.user)
     return render(request, "cart_structure.html", {'form':form2})
