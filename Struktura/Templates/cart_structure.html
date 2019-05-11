@@ -17,24 +17,18 @@
 					<td>Całkowita wartość [zł]</td>
 					<td>Częstotliwość kupowania</td>
 				</tr>
-				{% for cart in data %}
-					{% for product in cart.product.all%}
+
+					{%for x in data%}
+
 						<tr>
-							<td>{{product.get_category_display}}</td>
-
-							<td>{{product.price}}</td>
-
-							<td>
-								<form method='POST'>
-									{% csrf_token %}
-									<input type="hidden" name="product_id"  value="{{ product.id }}"/>
-									<input type="submit" class="btn btn-danger" value="Usuń" name="deleteButton"/>
-								</form>
-                           </td>
+							<td>{{x}}</td>
+							<td></td>
+							<td></td>
 
 						</tr>
-					{% endfor %}
-				{% endfor %}
+
+
+					{%endfor%}
 			</table>
 		</div> <!-- productTable -->
 

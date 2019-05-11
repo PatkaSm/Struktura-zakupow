@@ -1,10 +1,11 @@
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.utils import timezone
-
 from cart.forms import NewCartForm
 from cart.models import Cart
-from product.forms import selectCart
+from product.forms import selectCart, Category
+from django.db.models import F, Sum, Count
+
 from product.models import Product
 
 
@@ -33,12 +34,15 @@ def show_cart(request):
         form2 = selectCart(request.POST, user=request.user)
         if form2.is_valid():
             cart = form2.cleaned_data.get('cart')
-            data = Cart.objects.order_by('-date_added').filter(user=request.user, id=cart.id)
-            data2 = Product.objects.filter(user=request.user)
-            return render(request, "cart_structure.html", {'form':form2, 'data' : data, 'data2':data2})
+            koszyk = Cart.objects.get(user=request.user, id=cart.id)
+            produkty = koszyk.product.filter(user=request.user)
+            n = produkty.values('category').annotate(Sum('price'))
+            print(n)
+            return render(request, "cart_structure.html", {'form':form2,'data':n})
     else:
         form2 = selectCart(user=request.user)
     return render(request, "cart_structure.html", {'form':form2})
+
 
 
 

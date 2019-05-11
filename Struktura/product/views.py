@@ -29,6 +29,7 @@ def new_product_view(request):
             if produkt.exists():
                 cart = Cart.objects.get(product=produkt[0])
                 produkt.delete()
+                messages.success(request,'Produkt {name} został usunięty z koszyka  {cart}!'.format(name= produkt, cart=cart))
                 form = NewProductForm(user=request.user)
                 form2 = selectCart(user=request.user)
                 data = Cart.objects.order_by('-date_added').filter(user=request.user, cart_name=cart)
