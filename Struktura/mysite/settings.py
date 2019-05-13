@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'user',
     'product',
-    'cart'
+    'cart',
 ]
 
 MIDDLEWARE = [
@@ -125,3 +125,4 @@ STATIC_ROOT = ''
 STATICFILES_DIRS = (
 os.path.join('static'),
 )
+

@@ -13,23 +13,27 @@
 
 			<table id="table">
 				<tr>
-					<td style="color: white">Rodzaj produktu</td>
+					<td>Rodzaj produktu</td>
 					<td>Całkowita wartość [zł]</td>
 					<td>Częstotliwość kupowania</td>
 				</tr>
 
 
 						<tr>
-							{%for x in data%}
-							{%for  klucz, wartosc in x.items%}
-							<td>{{wartosc}} </td>
-							{%endfor%}
-
+							{%for x in products%}
+							<td>{{x.category}} </td>
+							<td>{{x.total_price}} zł </td>
+							<td>{{x.total}} </td>
 						</tr>
-
 						{%endfor%}
-
+						<td style="background-color: #cc1111">Wartość całego koszyka wynosi:</td>
+						<td  style="background-color: #cc1111"> {{sum_products}} zł </td>
+						<td  style="background-color: #cc1111"> </td>
 			</table>
 		</div> <!-- productTable -->
 
 {% endblock content %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js"></script>
+<script src="ck/static/chartkick.js"></script>
+<script src="http://www.google.com/jsapi"></script>
+<script src="ck/static/chartkick.js"></script>

@@ -32,12 +32,11 @@ def show_cart(request):
         form2 = selectCart(request.POST, user=request.user)
         if form2.is_valid():
             cart = form2.cleaned_data.get('cart')
-            cart = Cart.objects.get(id=cart.id)
-            products = cart.product.filter(user=request.user)
-            sum_product_price_by_category = products.values('category').annotate(Sum('price')).annotate(Count('id')).order_by('category')
-
-
-            return render(request, "cart_structure.html", {'form':form2,'data':sum_product_price_by_category})
+            cart_from_form = Cart.objects.get(id=cart.id)
+            products = cart_from_form.product.filter(user=request.user)
+            sum_product_price_by_category = products.values('category').annotate(total = Count('id'), total_price = Sum('price')).order_by()
+            sum_products =Cart.objects.filter(id = cart.id, user = request.user).aggregate(Sum('product__price'))['product__price__sum']
+            return render(request, "cart_structure.html", {'form':form2,'products':sum_product_price_by_category, 'sum_products': sum_products})
     else:
         form2 = selectCart(user=request.user)
     return render(request, "cart_structure.html", {'form':form2})
