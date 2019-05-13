@@ -18,17 +18,17 @@
 					<td>Częstotliwość kupowania</td>
 				</tr>
 
-					{%for x in data%}
 
 						<tr>
-							<td>{{x}}</td>
-							<td></td>
-							<td></td>
+							{%for x in data%}
+							{%for  klucz, wartosc in x.items%}
+							<td>{{wartosc}} </td>
+							{%endfor%}
 
 						</tr>
 
+						{%endfor%}
 
-					{%endfor%}
 			</table>
 		</div> <!-- productTable -->
 

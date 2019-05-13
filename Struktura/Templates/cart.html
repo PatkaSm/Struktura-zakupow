@@ -9,7 +9,7 @@
 			<div id="addProduct">
 				<form id = 'product_form' method="POST">
 					{% csrf_token %}
-					{{ form.as_p }}
+					{{ form }}
 					<div class="form-group">
 						<button class="btn btn-outline-info" type="submit" name="addProduct">Dodaj produkt</button>
 					</div>

@@ -6,8 +6,6 @@ from cart.models import Cart
 from product.forms import selectCart, Category
 from django.db.models import F, Sum, Count
 
-from product.models import Product
-
 
 def index(request):
     return render(request, "newCart.html")
@@ -34,11 +32,12 @@ def show_cart(request):
         form2 = selectCart(request.POST, user=request.user)
         if form2.is_valid():
             cart = form2.cleaned_data.get('cart')
-            koszyk = Cart.objects.get(user=request.user, id=cart.id)
-            produkty = koszyk.product.filter(user=request.user)
-            n = produkty.values('category').annotate(Sum('price'))
-            print(n)
-            return render(request, "cart_structure.html", {'form':form2,'data':n})
+            cart = Cart.objects.get(id=cart.id)
+            products = cart.product.filter(user=request.user)
+            sum_product_price_by_category = products.values('category').annotate(Sum('price')).annotate(Count('id')).order_by('category')
+
+
+            return render(request, "cart_structure.html", {'form':form2,'data':sum_product_price_by_category})
     else:
         form2 = selectCart(user=request.user)
     return render(request, "cart_structure.html", {'form':form2})
