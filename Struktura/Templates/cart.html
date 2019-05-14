@@ -6,10 +6,11 @@
 
 		<div class="cartForm">
 			<p>Stwórz produkt, który chcesz umieścić w koszyku, wpisz jego cenę oraz wybierz kategorię do której należy.</p>
-			<div id="addProduct">
+			<div class="addProduct">
 				<form id = 'product_form' method="POST">
 					{% csrf_token %}
 					{{ form }}
+						<br> <br>
 					<div class="form-group">
 						<button class="btn btn-outline-info" type="submit" name="addProduct">Dodaj produkt</button>
 					</div>

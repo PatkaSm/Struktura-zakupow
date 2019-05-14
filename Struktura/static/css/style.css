@@ -2,7 +2,7 @@ html,body{
 	margin:0px;
 	padding:0px;
 	height:100%;
-	background-color: white;
+	background-image: url('/static/images/tlo1.jpg');
 
 }
 
@@ -20,7 +20,7 @@ html,body{
 	height: 100%;
 	width: 100%;
 	color: white;
-	background-image: url('/static/images/1.jpg');
+	background-image: url('/static/images/18.jpg');
 	text-align: center;
 	font-family: 'Lato', sans-serif;
 	padding-top:30px;
@@ -117,11 +117,12 @@ nav {
     min-height:200px;
     background: transparent;
 	text-align: center;
+	padding: 10px;
 
 }
 nav ul {
     list-style:none;
-    padding:30px;
+
     font-size:0;
     display: inline-block;
 
@@ -131,27 +132,28 @@ nav ul li {
 
 }
 nav ul li a {
-    font:bold 14px/60px 'Open Sans', sans-serif;
     color: #333333;
     display: inline-block;
     text-decoration: none;
 	margin-left: 15px;
 	margin-right: 15px;
-	border: 2px solid #FF4500;
+	border: 2px solid #990033;
 	background: rgba(255, 255, 255, 0.7);
     filter: alpha(opacity=70);
-	height:150px;
-	width:150px;
+	height: 155px;
+	width: 155px;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 30px;
 
 }
 nav ul li a:hover, nav ul li a:active, nav ul li a:focus {
-	border: 3px solid #FF4500;
-	color: black;
+	border: 3px solid white;
+	color: #990033;
 	text-decoration: none;
 	box-shadow: 2px 2px 4px;
 	background: rgba(255, 255, 255, 0.9);
     filter: alpha(opacity=90);
-
 }
 .zalogowanyJako{
 	text-align:right;
@@ -178,19 +180,19 @@ footer{
 .demo-icon{
 
 	font-size: 30px;
-	color: 	#FF4500;
+	color: #990033;
 
 }
 .cartForm{
-	border-top: 2px solid #FF4500;
-	border-bottom: 2px solid #FF4500;
+	border-top: 2px solid white;
+	border-bottom: 2px solid white;
 	padding-top:30px;
 	padding-bottom:30px;
 	margin-top:30px;
 	min-height:300px;
 	position: relative;
-	background: rgba(200, 155, 055, 0.7);
-    filter: alpha(opacity=70);
+	background: rgba(255, 555, 255, 0.3);
+    filter: alpha(opacity=30);
 }
 .form{
 	position: absolute;
@@ -219,14 +221,7 @@ footer{
 	min-height:150px;
 	min-width:300px;
 }
-#bascetName{
-	width: 360px;
-	margin: 0 auto;
-	border: 1px solid #FF4500;
-	outline: 5px solid #DCDCDC;
-	font-size: 22px;
 
-}
 .addItem{
 	margin-left:115px;
 }
@@ -279,9 +274,9 @@ label{
    min-width:200px;
 }
 
-#addProduct{
+.addProduct{
 	width: 400px;
-    margin-left: 35%;
+    margin-left: 40%;
 
 
 }
