@@ -18,12 +18,11 @@
 					<td>Częstotliwość kupowania</td>
 				</tr>
 
-
 						<tr>
 							{%for x in products%}
 							<td>{{x.category}} </td>
 							<td>{{x.total_price}} zł </td>
-							<td>{{x.total}} </td>
+							<td> {{x.total}} </td>
 						</tr>
 						{%endfor%}
 						<td style="background-color: #cc1111">Wartość całego koszyka wynosi:</td>
