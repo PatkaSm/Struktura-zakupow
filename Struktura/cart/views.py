@@ -3,8 +3,11 @@ from django.shortcuts import render, redirect
 from django.utils import timezone
 from cart.forms import NewCartForm
 from cart.models import Cart
-from product.forms import selectCart, Category
-from django.db.models import F, Sum, Count
+from product.forms import selectCart
+from django.db.models import Sum, Count
+import json
+from django.core.serializers.json import DjangoJSONEncoder
+
 
 
 def index(request):
@@ -36,7 +39,11 @@ def show_cart(request):
             products = cart_from_form.product.filter(user=request.user)
             sum_product_price_by_category = products.values('category').annotate(total = Count('id'), total_price = Sum('price')).order_by()
             sum_products =Cart.objects.filter(id = cart.id, user = request.user).aggregate(Sum('product__price'))['product__price__sum']
-            return render(request, "cart_structure.html", {'form':form2,'products':sum_product_price_by_category, 'sum_products': sum_products})
+            dane = products.values('category').annotate(total_price = Sum('price'))
+            danejson = json.dumps(list(dane), cls=DjangoJSONEncoder)
+            data = {'Chrome': 52.9, 'Opera': 1.6, 'Firefox': 27.7}
+
+            return render(request, "cart_structure.html", {'form':form2,'products':sum_product_price_by_category, 'sum_products': sum_products, 'data':data})
     else:
         form2 = selectCart(user=request.user)
     return render(request, "cart_structure.html", {'form':form2})

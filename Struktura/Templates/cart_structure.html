@@ -1,7 +1,7 @@
 {% extends "index.html" %}
 
 {% block content %}
-
+{% load mathfilters %}
 <div class="productTable">
 			<form id = "show_product_form" method="POST">
 				{% csrf_token %}
@@ -16,6 +16,7 @@
 					<td>Rodzaj produktu</td>
 					<td>Całkowita wartość [zł]</td>
 					<td>Częstotliwość kupowania</td>
+					<td>Procentowy udział w całych wydatkach</td>
 				</tr>
 
 						<tr>
@@ -23,16 +24,18 @@
 							<td>{{x.category}} </td>
 							<td>{{x.total_price}} zł </td>
 							<td> {{x.total}} </td>
+							{% with numerator=x.total_price denominator=sum_products %}
+							<td>{{numerator|mul:100|div:denominator|floatformat }} % </td>
+
 						</tr>
+				 {% endwith %}
 						{%endfor%}
 						<td style="background-color: #cc1111">Wartość całego koszyka wynosi:</td>
 						<td  style="background-color: #cc1111"> {{sum_products}} zł </td>
 						<td  style="background-color: #cc1111"> </td>
+						<td  style="background-color: #cc1111"> </td>
 			</table>
+ 			<div id="chart-1">{{ output|safe }}</div>
 		</div> <!-- productTable -->
 
 {% endblock content %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js"></script>
-<script src="ck/static/chartkick.js"></script>
-<script src="http://www.google.com/jsapi"></script>
-<script src="ck/static/chartkick.js"></script>
