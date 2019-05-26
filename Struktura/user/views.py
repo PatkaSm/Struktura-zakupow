@@ -1,3 +1,4 @@
+
 from django.contrib.auth.views import logout_then_login
 from django.shortcuts import render, redirect
 from django.contrib import messages
@@ -11,7 +12,7 @@ from django.contrib.auth import (
 
 def logout_view(request):
     logout(request)
-    return logout_then_login(request,login_url='/login')
+    return logout_then_login(request,login_url='user_login')
 
 
 def login_view(request):

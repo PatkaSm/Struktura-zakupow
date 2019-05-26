@@ -19,14 +19,14 @@
 		</div>
 
 		<div class="productTable">
-			<form id = "show_product_form" method="POST">
-				{% csrf_token %}
-				{{ form2.as_p }}
-				<div class="form-group">
-					<input type="submit" name="choiceCart" value="Click me">
-				</div>
-			</form>
+			<div class="addProduct">
+				<form id = "show_product_form" method="POST">
+					{% csrf_token %}
+					{{ form2}}
 
+				</form>
+			</div>
+		<div class="tablescroll" style="scrollbar-width: none;">
 			<table id="table">
 				<tr>
 					<td style="color: white">Rodzaj produktu</td>
@@ -34,11 +34,10 @@
 					<td>Wartość [zł]</td>
 					<td>Usuń produkt z koszyka</td>
 				</tr>
-				{% for cart in data %}
-					{% for product in cart.product.all %}
+				{% for product in all_products_in_cart %}
 						<tr>
 							<td>{{ product }}</td>
-							<td>{{product.get_category_display}}</td>
+							<td>{{product.category}}</td>
 							<td>{{product.price}}</td>
 							<td>
 								<form method='POST'>
@@ -49,9 +48,9 @@
                            </td>
 
 						</tr>
-					{% endfor %}
 				{% endfor %}
 			</table>
+		</div>
 		</div> <!-- productTable -->
 
 	</div> <!-- col-sm-12 -->

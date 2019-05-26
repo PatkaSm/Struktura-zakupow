@@ -14,13 +14,14 @@ html,body{
 	margin-bottom: 100px;
 	position: relative;
 	font-family: 'Lato', sans-serif;
+	text-align: center;
 }
 
 .slogan{
 	height: 100%;
 	width: 100%;
 	color: white;
-	background-image: url('/static/images/18.jpg');
+	background-image: url('/static/images/17.jpg');
 	text-align: center;
 	font-family: 'Lato', sans-serif;
 	padding-top:30px;
@@ -193,6 +194,7 @@ footer{
 	position: relative;
 	background: rgba(255, 555, 255, 0.3);
     filter: alpha(opacity=30);
+	text-align: center
 }
 .form{
 	position: absolute;
@@ -203,28 +205,8 @@ footer{
 	min-height:150px;
 	width:250px;
 }
-.niewiem{
-	position: absolute;
-    top: 65%;
-    left: 58%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-	min-height:150px;
-	min-width:300px;
-}
-.niewiem2{
-	position: absolute;
-    top: 85%;
-    left: 60%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-	min-height:150px;
-	min-width:300px;
-}
 
-.addItem{
-	margin-left:115px;
-}
+
 p{
 
 	text-align: center;
@@ -244,14 +226,25 @@ label{
 	height:400px;
 	position: relative;
 }
+
+.tablescroll{
+	overflow-y:scroll;
+	overflow-x:hidden;
+	height:400px !important;
+	min-width: 300px;
+	position:relative;
+	margin: auto;
+	margin-bottom: 80px;
+}
+
 #table{
-	width: 75%;
+	width: 60%;
         /* określa szerokość tabeli na 75%*/
         height:100px;
         /* określa wysokość tabeli na 100px*/
         padding: 10px;
         /* określa margines wewnętrzny na 10 px */
-        margin: 15px auto 15px auto;
+        margin: 15px auto 35px auto;
         /* określa margines zewnętrzny- tabela zostaje wyśrodkowana */
         /* określa background tabeli */
         -webkit-border-radius: 15px;
@@ -274,11 +267,21 @@ label{
    min-width:200px;
 }
 
-.addProduct{
-	width: 400px;
-    margin-left: 40%;
-
+.addProduct {
+	width: 100px;
+    margin-left: 45%;
 
 }
 
+.blog{
+
+	margin:30px 200px 30px 200px;
+	color: white;
+	text-align: justify;
+}
+
+.newPost{
+ 	margin: 30px 100px 30px 100px;
+	text-align: center;
+}
 

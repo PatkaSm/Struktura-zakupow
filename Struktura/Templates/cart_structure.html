@@ -1,16 +1,14 @@
 {% extends "index.html" %}
-
 {% block content %}
 {% load mathfilters %}
-<div class="productTable">
+		<div class="productTable">
+			<div class="addProduct">
 			<form id = "show_product_form" method="POST">
 				{% csrf_token %}
 				{{ form.as_p }}
-				<div class="form-group">
-					<button class="btn btn-outline-info" type="submit">wybierz koszyk</button>
-				</div>
-			</form>
 
+			</form>
+			</div>
 			<table id="table">
 				<tr>
 					<td>Rodzaj produktu</td>
@@ -35,7 +33,8 @@
 						<td  style="background-color: #cc1111"> </td>
 						<td  style="background-color: #cc1111"> </td>
 			</table>
- 			<div id="chart-1">{{ output|safe }}</div>
-		</div> <!-- productTable -->
+
+		</div>
+
 
 {% endblock content %}

@@ -5,22 +5,20 @@
 	<div class="col-sm-12" >
 		<div class="content">
 			<div id="logowanie">
-				<div class="content-section">
-					<form method="POST">
-						<fieldset class="form-group">
-							{% csrf_token %}
-							{{ form.as_p }}
-						</fieldset>
-						<div class="form-group">
-							<button class="btn btn-outline-info" type="submit">Zaloguj</button>
-						</div>
-					</form>
-					<div class="border-top pt-3">
-						<small class="text-muted">
-							Nie masz konta? <a class="ml-2" href="{% url 'register' %}">Zarejestruj się</a>
-						</small>
+				<form method="POST">
+					<fieldset class="form-group">
+						{% csrf_token %}
+						{{ form.as_p }}
+					</fieldset>
+					<div class="form-group">
+						<button class="btn btn-outline-info" type="submit">Zaloguj</button>
 					</div>
-				 </div>
+				</form>
+				<div class="border-top pt-3">
+					<small class="text-muted">
+						Nie masz konta? <a class="ml-2" href="{% url 'register' %}">Zarejestruj się</a>
+					</small>
+				</div>
 			</div>
 		</div>
 	</div>

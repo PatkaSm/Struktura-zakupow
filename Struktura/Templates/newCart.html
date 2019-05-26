@@ -14,6 +14,39 @@
 					</form>
 			</div>
 		</div>
+		<p style="color: white; margin-top: 30px;">Twoje koszyki: </p>
+		<div class="tablescroll" style="scrollbar-width: none;">
+			{% if carts %}
+			<table id="table">
+				<tr>
+					<td>Nazwa</td>
+					<td> Data utworzenia </td>
+					<td>Usuń koszyk</td>
+				</tr>
+				{% for cart in carts %}
+						<tr>
+							<td>{{cart}}</td>
+							<td>{{cart.date_added}}</td>
+							<td>
+								<form method='POST'>
+									{% csrf_token %}
+									<input type="hidden" name="cart_id"  value="{{ cart.id }}"/>
+									<input type="submit" class="btn btn-danger" value="Usuń" name="deleteButton"/>
+								</form>
+                           </td>
+
+						</tr>
+				{% endfor %}
+				{% endif %}
+			</table>
+				{% if not carts %}
+
+				<p style="color: white">Nie posiadasz jeszcze żadnego koszyka, stwórz nowy wykorzystując powyższy formularz.</p>
+				{% endif %}
+
+
+			</table>
+		</div>
 	</div>
 </div>
 {% endblock content %}

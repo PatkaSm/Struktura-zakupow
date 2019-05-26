@@ -18,8 +18,7 @@
 		   info.style.display=(info.style.display=='none')?'':'none'
 		}
 	</script>
- <script type="text/javascript" src="{% static "fusioncharts/fusioncharts.js" %}"></script>
-   <script type="text/javascript" src="{% static "fusioncharts/themes/fusioncharts.theme.fint.js" %}"></script>
+
 </head>
 <body>
 	<div class="container">
@@ -35,8 +34,8 @@
 						<ul class="menu">
 							<li><a href="{% url 'newcart' %}">Utwórz nowy koszyk </br><i class="demo-icon icon-plus" ></i></a></li>
 							<li><a href="{% url 'cart' %}">Aktualny koszyk </br><i class="demo-icon icon-basket-1" ></i></a></li>
-							<li><a href="{%url 'cart_structure'%}">Struktura zakupów</br><i class="demo-icon icon-chart-bar"></i></a></li>
-							<li><a href="blog.html">Jak oszczędzać?</br><i class="demo-icon icon-money"></i></a></li>
+							<li><a href="{% url 'cart_structure' %}">Struktura zakupów</br><i class="demo-icon icon-chart-bar"></i></a></li>
+							<li><a href="{% url 'blog' %}">Jak oszczędzać?</br><i class="demo-icon icon-money"></i></a></li>
 						</ul>
 					</nav>
 				</div>

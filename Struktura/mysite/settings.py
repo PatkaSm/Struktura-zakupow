@@ -14,6 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import chartkick
+from django.conf.global_settings import SESSION_EXPIRE_AT_BROWSER_CLOSE
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -43,7 +44,8 @@ INSTALLED_APPS = [
     'product',
     'cart',
     'mathfilters',
-'chartkick',
+    'blog',
+
 ]
 
 MIDDLEWARE = [
@@ -110,7 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pl'
 
 TIME_ZONE = 'UTC'
 
@@ -128,5 +130,8 @@ STATIC_URL = '/static/'
 STATIC_ROOT = ''
 STATICFILES_DIRS = (
 os.path.join('static'),
-chartkick.js(),
+
+
 )
+
+SESSION_EXPIRE_AT_BROWSER_CLOSE

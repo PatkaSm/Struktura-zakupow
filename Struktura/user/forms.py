@@ -28,24 +28,4 @@ class UserRegisterForm(UserCreationForm):
         model = User
         fields = ('username', 'password1', 'password2','email')
 
-    def clean(self, *args, **kwargs):
-        username = self.cleaned_data.get('username')
-        password1   = self.cleaned_data.get('password1')
-        password2 = self.cleaned_data.get('password2')
-        email = self.cleaned_data.get('email')
-        username_qs = User.objects.filter(username=username)
-        email_qs = User.objects.filter(email=email)
-        if username_qs.exists():
-            raise forms.ValidationError(
-                "Ta nazwa użytkownika już istnieje")
-        if password1 != password2:
-            raise forms.ValidationError(
-                "Podane hasła nie są takie same."
-            )
-        if email_qs.exists():
-            raise forms.ValidationError(
-                "Tn email został już użyty."
-            )
-        return super(UserRegisterForm, self).clean(*args, **kwargs)
-
 

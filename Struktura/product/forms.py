@@ -10,7 +10,7 @@ class NewProductForm(forms.ModelForm):
 
     def __init__(self,  *args, user, **kwargs):
         super(NewProductForm, self).__init__(*args, **kwargs)
-        self.fields['cart'] = forms.ModelChoiceField(queryset=Cart.objects.filter(user=user), label="Koszyk")
+        self.fields['cart'] = forms.ModelChoiceField(queryset=Cart.objects.filter(user=user).order_by('-date_added'), label="Koszyk")
 
     class Meta:
         model = Product
@@ -21,5 +21,5 @@ class selectCart(forms.Form):
 
     def __init__(self, *args, user, **kwargs):
         super(selectCart, self).__init__(*args, **kwargs)
-        self.fields['cart'] = forms.ModelChoiceField(queryset=Cart.objects.filter(user=user), label="Koszyk")
+        self.fields['cart'] = forms.ModelChoiceField(queryset=Cart.objects.filter(user=user).order_by('-date_added'), label="Koszyk",widget=forms.Select(attrs={"onChange":'submit()'}))
 

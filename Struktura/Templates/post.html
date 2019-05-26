@@ -1,0 +1,9 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <div class="blog">
+        <h1>{{ post.title }}</h1>
+        {{post.date_added}}
+       <h2> {{ post.content }} </h2>
+    </div>
+{% endblock %}

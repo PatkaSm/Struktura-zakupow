@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+{% block content %}
+
+<div class="row">
+	<div class="col-sm-12s">
+		<div class="newPost">
+			<form id = 'post_form' method="POST">
+				{% csrf_token %}
+				{{ post_form.as_p }}
+				<br> <br>
+				<div class="form-group">
+					<button class="btn btn-outline-info" type="submit" name="addProduct">Dodaj post</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+
+{% endblock content %}

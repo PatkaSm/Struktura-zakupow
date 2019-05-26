@@ -1,7 +1,16 @@
 {% extends "index.html" %}
 {% block content %}
 
-JESZCZE NIC NIE MA
+
+<p><a href="{% url 'new_post' %}">Dodaj nowy post</a></p>
+
+
+<div class="blog">
+{% for post in all_posts %}
+	<h1><a href="{% url 'new_post' pk=post.pk %}">{{ post.title }}</a></h1> Opublikowany: {{post.date_added}}
+	<h3>{{post.content|slice:":555"}} ...<a href="{% url 'new_post' pk=post.pk %}">Zobacz całą treść.</a> </h3>
+	{% endfor %}
+</div>
 
 
 {% endblock content %}
