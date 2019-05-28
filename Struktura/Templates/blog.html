@@ -1,15 +1,21 @@
 {% extends "index.html" %}
 {% block content %}
-
-
-<p><a href="{% url 'new_post' %}">Dodaj nowy post</a></p>
-
-
+{% if request.user.is_staff %}
+<br>
+<p><a href="{% url 'new_post' %}" class="title">Dodaj nowy post <i class="demo-icon icon-plus"></i> </a></p>
+ {% endif %}
 <div class="blog">
-{% for post in all_posts %}
-	<h1><a href="{% url 'new_post' pk=post.pk %}">{{ post.title }}</a></h1> Opublikowany: {{post.date_added}}
-	<h3>{{post.content|slice:":555"}} ...<a href="{% url 'new_post' pk=post.pk %}">Zobacz całą treść.</a> </h3>
-	{% endfor %}
+		{% for post in all_posts %}
+		{% if request.user.is_staff %}
+		<form method="POST"> {% csrf_token %}
+			<input type="hidden" name="post_id"  value="{{ post.id }}"/>
+			<button type="submit" class="btn" name="delete" style="padding:0 !important; display: inline-block"><i class="demo-icon icon-trash-1"></i></button>
+		</form>
+		{% endif %}
+		<h1><a href="{% url 'post_details' pk=post.pk %}" class="title">{{ post.title }}</a>  </h1>
+		Opublikowany: {{post.date_added}}</tr>
+		<h3>{{post.content|slice:":555"}} ... <a href="{% url 'post_details' pk=post.pk %}" class="logut_title">Zobacz całą treść.</a> </h3>
+		{% endfor %}
 </div>
 
 

@@ -33,7 +33,7 @@ urlpatterns = [
     path('cart/', product_views.new_product_view, name='cart'),
     path('blog/', blog_views.blog_view, name='blog'),
     path('blog/new_post', blog_views.newPost_view, name='new_post'),
-    path('blog/new_post/<int:pk>', blog_views.post_details_view, name='new_post'),
+    path('blog/new_post/<int:pk>', blog_views.post_details_view, name='post_details'),
 
 
 

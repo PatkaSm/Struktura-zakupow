@@ -1,17 +1,19 @@
-{% extends "index.html" %}
+{% extends "blog_base.html" %}
 {% block content %}
 
 <div class="row">
 	<div class="col-sm-12s">
 		<div class="newPost">
 			<form id = 'post_form' method="POST">
+				<h2 style="color: white">Wpisz tytuł i treść posta</h2>
 				{% csrf_token %}
 				{{ post_form.as_p }}
 				<br> <br>
 				<div class="form-group">
-					<button class="btn btn-outline-info" type="submit" name="addProduct">Dodaj post</button>
+					<button class="btn btn-default" type="submit" name="addProduct">Dodaj post</button>
 				</div>
 			</form>
+			<a href="{% url 'blog' %}" class="btn btn-default"> Wróć </a>
 		</div>
 	</div>
 </div>

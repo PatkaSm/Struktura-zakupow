@@ -29,9 +29,10 @@ def new_cart_view(request):
             return redirect('cart')
         elif 'deleteButton' in request.POST:
             delete_cart = Cart.objects.filter(id=request.POST['cart_id'])
-            print(delete_cart)
+            delete_products = delete_cart[0].product.all()
             if delete_cart.exists():
                 cart = Cart.objects.get(id=delete_cart[0].id)
+                delete_products.delete()
                 delete_cart.delete()
                 messages.success(request, 'Koszyk {name} został usunięty!'.format(name=cart))
                 all_carts = Cart.objects.filter(user=request.user)

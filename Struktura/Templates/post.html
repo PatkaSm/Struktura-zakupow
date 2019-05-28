@@ -1,9 +1,29 @@
-{% extends 'index.html' %}
+{% extends 'blog_base.html' %}
 
 {% block content %}
     <div class="blog">
-        <h1>{{ post.title }}</h1>
-        {{post.date_added}}
-       <h2> {{ post.content }} </h2>
+        <div class="wyjscie">
+        <a href="{% url 'blog' %}" class="logut_title">  Wróć  </a>
+        </div>
+        <h1 style="border-bottom: white 1px solid; padding: 10px">{{ post.title }}  </h1>
+        {{post.date_added}} <br><br>
+       <h2 style="margin-bottom: 100px"> {{ post.content | safe }} </h2>
+    </div>
+    <div class="comment_section">
+        <h2 style="color: white">Dodaj komentarz:</h2>
+        <form  id = 'comment_form' method="post">
+            {% csrf_token %}
+            {{comment_form}}
+            <br> <br>
+            <button class="btn btn-outline-info" type="submit">Dodaj komentarz</button>
+        </form>
+
+        {% for comment in comments %}
+        <div class="comment">
+        <h4> Użytkownik: {{comment.author}}, z dnia {{comment.date_added}}:  </h4>
+          <h3> {{comment.content}}</h3>
+        </div>
+        {% endfor %}
+
     </div>
 {% endblock %}

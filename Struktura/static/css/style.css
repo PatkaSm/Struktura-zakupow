@@ -285,3 +285,53 @@ label{
 	text-align: center;
 }
 
+.comment_section{
+
+	text-align: left !important;
+	margin:30px 200px 30px 200px;
+
+}
+
+.comment{
+	min-height: 100px;
+	min-width: 300px;
+	border-bottom: white 1px double;
+	margin: 10px;
+	color: white;
+}
+
+.wyjscie{
+	color: #333333;
+    display: inline-block;
+    text-decoration: none;
+	text-align: center;
+	border: 2px solid #990033;
+	background: rgba(255, 255, 255, 0.7);
+    filter: alpha(opacity=70);
+	width: 100%;
+	height: 60px;
+	font-size: 14px;
+	font-weight: bold;
+	padding-top: 20px;
+}
+
+.title{
+	color: white;
+	text-decoration: none;
+}
+
+.logut_title{
+
+	color: #990033;
+	text-decoration: none;
+}
+
+.logut_title:hover{
+	 text-decoration: none;
+	 color: #990033;
+ }
+
+.title:hover{
+	color: #990033;
+	text-decoration: none;
+}
